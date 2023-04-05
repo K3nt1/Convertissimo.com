@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="style_index.css" >
-        <link rel="icon" type="image.png" sizes="20x20" href="media/logo.png">
         <link rel="preconnect" href="https://fonts.googlapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link rel="icon" type="image.png" sizes="20x20" href="media/logo.png">
 		<title>Convertissimo | Convertissez absolument TOUT</title>
+        <link rel="stylesheet" href="style_index.css" >
 	</head>
-
     <body>
         <div class="contenair">
+            <video autoplay loop muted plays-inline class="video">
+                <source src="media/video.mp4" type="video/mp4">
+            </video>
             <nav>
                 <img src="media/logo.png" class="logo">
                 <ul>
@@ -21,6 +22,20 @@
                     <li><a href="page_numeration.html">Numération</a></li>
                 </ul>
             </nav>
+            <div class="accueil">
+                <h1>Convertissimo <span class="animation"></span></h1>
+                <a href="#">Convertir</a>
+            </div>
         </div>
+        <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+        <script>
+            var typed = new Typed('.animation', {
+            strings: ['Mesures ?', 'Devises ?', 'Binaire ?'],
+            typedSpeed:50,
+            backSpeed:50,
+            loop:true
+            });
+        </script>
+
     </body>
 </html>
