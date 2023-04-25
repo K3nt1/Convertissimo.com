@@ -1,40 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <link rel="preconnect" href="https://fonts.googlapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-        <link rel="icon" type="image.png" sizes="20x20" href="./Media/logo.png">
-		<title>Convertissimo</title>
-        <link rel="stylesheet" href="style_page_conversion.css" />
-	</head>
-
-    <body>
-        <div class="contenair">
-            <video autoplay loop muted plays-inline class="video">
-                <source src="Media/video.mp4" type="video/mp4">
-            </video>
-            <nav>
-                <a href="index.html"><img src="media/logo.png" class="logo"></a>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="page_devises.html">Devises</a></li>
-                    <li><a href="page_mesures.html">Mesures</a></li>
-                    <li><a href="page_numeration.html">Numération</a></li>
-                </ul>
-            </nav>
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h1>Devises</h1>
-                  </div>
-                  <div class="flip-card-back">
-                    <a href="page_devises.html">
-                        Euro, Dollar, Yen, Livre, Peso
-                    </a>
-                  </div>
+<head>
+    <link rel="preconnect" href="https://fonts.googlapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="icon" type="image.png" sizes="20x20" href="./Media/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Card Hover Effects</title>
+    <link rel="stylesheet" href="style_page_conversion.css">
+</head>
+<body>
+    <video autoplay loop muted plays-inline class="video">
+        <source src="Media/video.mp4" type="video/mp4">
+    </video>
+    <nav>
+        <a href="index.html"><img src="media/logo.png" class="logo"></a>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="page_devises.html">Devises</a></li>
+            <li><a href="page_mesures.html">Mesures</a></li>
+            <li><a href="page_numeration.html">Numération</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <img src="Media/dollar.png">
+                    <h3>Devises</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Dollar, Euro, Livre, Yen...</p>
+                        <a href="page_devises.html">Y aller</a>
                 </div>
             </div>
         </div>
-    </body>
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <img src="Media/mètre.png">
+                    <h3>Mesures</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Mètre, Litre, Kilogramme...</p>
+                        <a href="page_mesures.html">Y aller</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <img src="Media/binaire.png">
+                    <h3>Numération</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Binaire, Hexadécimal...</p>
+                        <a href="page_numeration.html">Y aller</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
