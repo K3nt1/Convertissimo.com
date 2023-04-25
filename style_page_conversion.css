@@ -5,7 +5,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: consolas;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container{
@@ -50,7 +50,7 @@ body{
     opacity: 1;
 }
 
-.container .card .face.face1 .content .img{
+.container .card .face.face1 .content img{
     max-width: 80px;
 }
 
