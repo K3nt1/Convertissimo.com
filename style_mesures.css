@@ -50,36 +50,61 @@ nav ul li a{
     z-index: -1;
 }
 
-.dropdown-btn {
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.valeur {
+    color: aqua;
+}
+
+.resultat {
+    color: aqua;
+}
+
+thead {
+    background-color: #ddd;
+}
+  
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+  
+th {
+    font-weight: bold;
+}
+  
+select,
+input[type="number"],
+button {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+  
+button {
     background-color: #4CAF50;
     color: white;
-    padding: 12px 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
 }
   
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+button:hover {
+    background-color: #3e8e41;
 }
   
-.dropdown-menu a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+.resultat {
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 16px;
+    align-items: center;
+    justify-content: center;
 }
-  
-.dropdown-menu a:hover {
-    background-color: #f1f1f1;
+
+.tableau{
+    background-color: rgb(255, 255, 255);
 }
-  
-.dropdown-btn.active + .dropdown-menu {
-    display: block;
-}
-  
