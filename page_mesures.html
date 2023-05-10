@@ -18,6 +18,26 @@
                     <li><a href="page_numeration.html">Numération</a></li>
                 </ul>
             </nav>
+            <button class="dropdown-btn">Choisissez une mesure</button>
+            <div class="dropdown-menu">
+                <script>
+                    var dropdownBtn = document.querySelector('.dropdown-btn');
+                    var dropdownMenu = document.querySelector('.dropdown-menu');
+                    
+                    dropdownBtn.addEventListener('click', function() {
+                      dropdownBtn.classList.toggle('active');
+                      
+                      if (dropdownBtn.classList.contains('active')) {
+                        dropdownMenu.style.display = 'block';
+                      } else {
+                        dropdownMenu.style.display = 'none';
+                      }
+                    });
+                </script>
+                <a href="#">Kilogramme</a>
+                <a href="#">Litre</a>
+                <a href="#">Mètre</a>
+            </div>
         </div>
     </header>
     <body>
