@@ -17,6 +17,8 @@
                 <option value="m">Mètres</option>
                 <option value="km">Kilomètres</option>
                 <option value="mi">Miles</option>
+                <option value="yd">Yards</option>
+                <option value="ft">Pieds</option>
               </select>
             </td>
             <td>
@@ -24,6 +26,8 @@
                 <option value="ft">Pieds</option>
                 <option value="yd">Yards</option>
                 <option value="mi">Miles</option>
+                <option value="m">Mètres</option>
+                <option value="km">Kilomètres</option>
               </select>
             </td> 
           </tr>
@@ -46,14 +50,45 @@
           var facteur = 1; 
           if (deUnite === "m" && aUnite === "ft") {
             facteur = 3.28084;
+          } else if (deUnite === "m" && aUnite === "km") {
+            facteur = 0.001;
+          } else if (deUnite === "m" && aUnite === "mi") {
+            facteur = 0.000621371;
+          } else if (deUnite === "m" && aUnite === "yd") {
+            facteur = (1/0.9144);
+          } else if (deUnite === "ft" && aUnite === "m") {
+            facteur = 0.3048;
+          } else if (deUnite === "ft" && aUnite === "mi") {
+            facteur = 0.000189394;
+          } else if (deUnite === "ft" && aUnite === "yd") {
+            facteur = (1/3);
+          } else if (deUnite === "ft" && aUnite === "km") {
+            facteur = 0.0003048;
           } else if (deUnite === "km" && aUnite === "mi") {
             facteur = 0.621371;
+          } else if (deUnite === "km" && aUnite === "ft") {
+            facteur = 3280,84;
+          } else if (deUnite === "km" && aUnite === "m") {
+            facteur = 1000;
+          } else if (deUnite === "km" && aUnite === "yd") {
+            facteur = 1093.61;
+          } else if (deUnite === "mi" && aUnite === "km") {
+            facteur = (1/0.621371);
           } else if (deUnite === "mi" && aUnite === "ft") {
             facteur = 5280;
+          } else if (deUnite === "mi" && aUnite === "m") {
+            facteur = (1/0.000621371);
+          } else if (deUnite === "mi" && aUnite === "yd") {
+            facteur = 1760;
           } else if (deUnite === "yd" && aUnite === "m") {
             facteur = 0.9144;
+          } else if (deUnite === "yd" && aUnite === "mi") {
+            facteur = 0.000568182;
+          } else if (deUnite === "yd" && aUnite === "km") {
+            facteur = 0.0009144;
+          } else if (deUnite === "yd" && aUnite === "ft") {
+            facteur = 3;
           }
-      
           var resultat = valeur * facteur;
       
           document.getElementById("resultat").innerHTML = valeur + " " + deUnite + " = " + resultat + " " + aUnite;
