@@ -32,20 +32,20 @@
                     <tr>
                         <td>
                         <select id="de-unite">
-                            <option value="m">Mètres</option>
-                            <option value="km">Kilomètres</option>
-                            <option value="mi">Miles</option>
-                            <option value="yd">Yards</option>
-                            <option value="ft">Pieds</option>
+                            <option value="mL">Millilitres</option>
+                            <option value="cL">Centilitres</option>
+                            <option value="L">Litres</option>
+                            <option value="oz">Once</option>
+                            <option value="m3">Mètres cube</option>
                         </select>
                         </td>
                         <td>
                         <select id="a-unite">
-                            <option value="ft">Pieds</option>
-                            <option value="yd">Yards</option>
-                            <option value="mi">Miles</option>
-                            <option value="m">Mètres</option>
-                            <option value="km">Kilomètres</option>
+                            <option value="mL">Millilitres</option>
+                            <option value="cL">Centilitres</option>
+                            <option value="L">Litres</option>
+                            <option value="oz">Once</option>
+                            <option value="m3">Mètres cube</option>
                         </select>
                         </td> 
                     </tr>
@@ -65,45 +65,45 @@
                     var valeur = document.getElementById("valeur").value;
                 
                     var facteur = 1; 
-                    if (deUnite === "m" && aUnite === "ft") {
-                        facteur = 3.28084;
-                    } else if (deUnite === "m" && aUnite === "km") {
+                    if (deUnite === "mL" && aUnite === "mL") {
+                        facteur = 1;
+                    } else if (deUnite === "mL" && aUnite === "cL") {
+                        facteur = 0.1;
+                    } else if (deUnite === "mL" && aUnite === "L") {
                         facteur = 0.001;
-                    } else if (deUnite === "m" && aUnite === "mi") {
-                        facteur = 0.000621371;
-                    } else if (deUnite === "m" && aUnite === "yd") {
-                        facteur = (1/0.9144);
-                    } else if (deUnite === "ft" && aUnite === "m") {
+                    } else if (deUnite === "mL" && aUnite === "oz") {
+                        facteur = (1/0.033814);
+                    } else if (deUnite === "cL" && aUnite === "m3") {
                         facteur = 0.3048;
-                    } else if (deUnite === "ft" && aUnite === "mi") {
+                    } else if (deUnite === "cL" && aUnite === "L") {
                         facteur = 0.000189394;
-                    } else if (deUnite === "ft" && aUnite === "yd") {
+                    } else if (deUnite === "cL" && aUnite === "cL") {
                         facteur = (1/3);
-                    } else if (deUnite === "ft" && aUnite === "km") {
+                    } else if (deUnite === "cL" && aUnite === "m3") {
                         facteur = 0.0003048;
-                    } else if (deUnite === "km" && aUnite === "mi") {
+                    } else if (deUnite === "L" && aUnite === "L") {
                         facteur = 0.621371;
-                    } else if (deUnite === "km" && aUnite === "ft") {
+                    } else if (deUnite === "L" && aUnite === "mL") {
                         facteur = 3280,84;
-                    } else if (deUnite === "km" && aUnite === "m") {
+                    } else if (deUnite === "L" && aUnite === "oz") {
                         facteur = 1000;
-                    } else if (deUnite === "km" && aUnite === "yd") {
+                    } else if (deUnite === "L" && aUnite === "cL") {
                         facteur = 1093.61;
-                    } else if (deUnite === "mi" && aUnite === "km") {
+                    } else if (deUnite === "oz" && aUnite === "cL") {
                         facteur = (1/0.621371);
-                    } else if (deUnite === "mi" && aUnite === "ft") {
+                    } else if (deUnite === "oz" && aUnite === "mL") {
                         facteur = 5280;
-                    } else if (deUnite === "mi" && aUnite === "m") {
+                    } else if (deUnite === "oz" && aUnite === "oz") {
                         facteur = (1/0.000621371);
-                    } else if (deUnite === "mi" && aUnite === "yd") {
+                    } else if (deUnite === "oz" && aUnite === "cL") {
                         facteur = 1760;
-                    } else if (deUnite === "yd" && aUnite === "m") {
+                    } else if (deUnite === "m³" && aUnite === "oz") {
                         facteur = 0.9144;
-                    } else if (deUnite === "yd" && aUnite === "mi") {
+                    } else if (deUnite === "m³" && aUnite === "L") {
                         facteur = 0.000568182;
-                    } else if (deUnite === "yd" && aUnite === "km") {
+                    } else if (deUnite === "m³" && aUnite === "m3") {
                         facteur = 0.0009144;
-                    } else if (deUnite === "yd" && aUnite === "ft") {
+                    } else if (deUnite === "m³" && aUnite === "mL") {
                         facteur = 3;
                     }
                     var resultat = valeur * facteur;
