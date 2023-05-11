@@ -34,8 +34,8 @@
                         <select id="de-unite">
                             <option value="µg">Microgrammes</option>
                             <option value="mg">Milligrammes</option>
-                            <option value="cm">Centigrammes</option>
-                            <option value="dm">Décigrammes</option>
+                            <option value="cg">Centigrammes</option>
+                            <option value="dg">Décigrammes</option>
                             <option value="g">Grammes</option>
                             <option value="dag">Décagrammes</option>
                             <option value="hg">Hectogrammes</option>
@@ -48,8 +48,8 @@
                         <select id="a-unite">
                             <option value="µg">Microgrammes</option>
                             <option value="mg">Milligrammes</option>
-                            <option value="cm">Centigrammes</option>
-                            <option value="dm">Décigrammes</option>
+                            <option value="cg">Centigrammes</option>
+                            <option value="dg">Décigrammes</option>
                             <option value="g">Grammes</option>
                             <option value="dag">Décagrammes</option>
                             <option value="hg">Hectogrammes</option>
@@ -183,6 +183,46 @@
                         facteur = 0.0001;
                     } else if (deUnite === "dag" && aUnite === "t") {
                         facteur = 0.00001;
+                    } else if (deUnite === "hg" && aUnite === "µg") {
+                        facteur = 100000000;
+                    } else if (deUnite === "hg" && aUnite === "mg") {
+                        facteur = 100000;
+                    } else if (deUnite === "hg" && aUnite === "cg") {
+                        facteur = 10000;
+                    } else if (deUnite === "hg" && aUnite === "dg") {
+                        facteur = 1000;
+                    } else if (deUnite === "hg" && aUnite === "g") {
+                        facteur = 100;
+                    } else if (deUnite === "hg" && aUnite === "dag") {
+                        facteur = 10;
+                    } else if (deUnite === "hg" && aUnite === "Kg") {
+                        facteur = 0.1;
+                    } else if (deUnite === "hg" && aUnite === "q") {
+                        facteur = 0.001;
+                    } else if (deUnite === "hg" && aUnite === "t") {
+                        facteur = 0.0001;
+                    } else if (deUnite === "Kg" && aUnite === "µg") {
+                        facteur = 1000000000;
+                    } else if (deUnite === "Kg" && aUnite === "mg") {
+                        facteur = 1000000;
+                    } else if (deUnite === "Kg" && aUnite === "cg") {
+                        facteur = 100000;
+                    } else if (deUnite === "Kg" && aUnite === "dg") {
+                        facteur = 10000;
+                    } else if (deUnite === "Kg" && aUnite === "g") {
+                        facteur = 1000;
+                    } else if (deUnite === "Kg" && aUnite === "dag") {
+                        facteur = 100;
+                    } else if (deUnite === "Kg" && aUnite === "hg") {
+                        facteur = 10;
+                    } else if (deUnite === "Kg" && aUnite === "q") {
+                        facteur = 0.01;
+                    } else if (deUnite === "Kg" && aUnite === "t") {
+                        facteur = 0.001;
+                    } else if (deUnite === "q" && aUnite === "µg") {
+                        facteur = 1000;
+                    } else if (deUnite === "hg" && aUnite === "dg") {
+                        facteur = 1000;
                     }
                     var resultat = valeur * facteur;
                 
