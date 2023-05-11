@@ -220,9 +220,41 @@
                     } else if (deUnite === "Kg" && aUnite === "t") {
                         facteur = 0.001;
                     } else if (deUnite === "q" && aUnite === "µg") {
+                        facteur = 100000000000;
+                    } else if (deUnite === "q" && aUnite === "mg") {
+                        facteur = 100000000;
+                    } else if (deUnite === "q" && aUnite === "cg") {
+                        facteur = 10000000;
+                    } else if (deUnite === "q" && aUnite === "dg") {
+                        facteur = 1000000;
+                    } else if (deUnite === "q" && aUnite === "g") {
+                        facteur = 100000;
+                    } else if (deUnite === "q" && aUnite === "dag") {
+                        facteur = 10000;
+                    } else if (deUnite === "q" && aUnite === "hg") {
                         facteur = 1000;
-                    } else if (deUnite === "hg" && aUnite === "dg") {
+                    } else if (deUnite === "q" && aUnite === "kg") {
+                        facteur = 100;
+                    } else if (deUnite === "q" && aUnite === "t") {
+                        facteur = 0.1;
+                    } else if (deUnite === "t" && aUnite === "µg") {
+                        facteur = 1000000000000;
+                    } else if (deUnite === "t" && aUnite === "mg") {
+                        facteur = 1000000000;
+                    } else if (deUnite === "t" && aUnite === "cg") {
+                        facteur = 100000000;
+                    } else if (deUnite === "t" && aUnite === "dg") {
+                        facteur = 10000000;
+                    } else if (deUnite === "t" && aUnite === "g") {
+                        facteur = 1000000;
+                    } else if (deUnite === "t" && aUnite === "dag") {
+                        facteur = 100000;
+                    } else if (deUnite === "t" && aUnite === "hg") {
+                        facteur = 10000;
+                    } else if (deUnite === "t" && aUnite === "Kg") {
                         facteur = 1000;
+                    } else if (deUnite === "t" && aUnite === "q") {
+                        facteur = 10;
                     }
                     var resultat = valeur * facteur;
                 
