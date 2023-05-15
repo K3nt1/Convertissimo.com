@@ -15,9 +15,69 @@
                 <ul>
                     <li><a href="page_devises.html">Devises</a></li>
                     <li><a href="page_mesures.html">Mesures</a></li>
+                    <li><a href="page_masses.html">Masses</a></li>
+                    <li><a href="page_volumes.html">Volumes</a></li>
                     <li><a href="#">Numération</a></li>
                 </ul>
             </nav>
+            <body>
+                <label for="base1">De la base :</label>
+                <select id="base1">
+                  <option value="bin">Binaire</option>
+                  <option value="dec">Décimal</option>
+                  <option value="hex">Hexadécimal</option>
+                </select>
+                <br><br>
+                <label for="base2">À la base :</label>
+                <select id="base2">
+                  <option value="bin">Binaire</option>
+                  <option value="dec">Décimal</option>
+                  <option value="hex">Hexadécimal</option>
+                </select>
+                <br><br>
+                <label for="valeur">Valeur :</label>
+                <input type="text" id="valeur">
+                <br><br>
+                <button onclick="convertir()">Convertir</button>
+                <br><br>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Base d'origine</th>
+                      <th>Valeur</th>
+                      <th>Base de destination</th>
+                      <th>Résultat</th>
+                    </tr>
+                  </thead>
+                  <tbody id="resultats">
+                  </tbody>
+                </table>
+                <script>
+                    function convertir() {
+                    var base1 = document.getElementById("base1").value;
+                    var base2 = document.getElementById("base2").value;
+                    var valeur = document.getElementById("valeur").value;
+                    var resultat = "";
+                    
+                    if (base1 == "bin" && base2 == "dec") {
+                      resultat = parseInt(valeur, 2);
+                    } else if (base1 == "bin" && base2 == "hex") {
+                      resultat = parseInt(valeur, 2).toString(16);
+                    } else if (base1 == "dec" && base2 == "bin") {
+                      resultat = (valeur >>> 0).toString(2);
+                    } else if (base1 == "dec" && base2 == "hex") {
+                      resultat = parseInt(valeur, 10).toString(16);
+                    } else if (base1 == "hex" && base2 == "bin") {
+                      resultat = parseInt(valeur, 16).toString(2);
+                    } else if (base1 == "hex" && base2 == "dec") {
+                      resultat = parseInt(valeur, 16);
+                    }
+                    
+                    var row = "<tr><td>" + base1 + "</td><td>" + valeur + "</td><td>" + base2 + "</td><td>" + resultat + "</td></tr>";
+                    document.getElementById("resultats").innerHTML += row;
+                  }
+                </script>
+              </body>
         </div>
     </header>
     <body>
