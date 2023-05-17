@@ -15,9 +15,253 @@
                 <ul>
                     <li><a href="#">Devises</a></li>
                     <li><a href="page_mesures.html">Mesures</a></li>
+                    <li><a href="page_masses.html">Masses</a></li>
+                    <li><a href="page_volumes.html">Volumes</a></li>
                     <li><a href="page_numeration.html">Numération</a></li>
                 </ul>
             </nav>
+            <div class="tableau">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>De</th>
+                        <th>À</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                        <select id="de-unite">
+                            <option value="$">Dollars américains</option>
+                            <option value="€">Euros</option>
+                            <option value="£">Livres Sterling</option>
+                            <option value="₹">Roupies indiennes</option>
+                            <option value="₽">Roubles russes</option>
+                            <option value="¥">Yens</option>
+                            <option value="CFA">Francs CFA</option>
+                            <option value="₩">Wons sud-coréens</option>
+                            <option value="₱">Pesos philippins</option>
+                            <option value="₫">Dongs</option>
+                        </select>
+                        </td>
+                        <td>
+                        <select id="a-unite">
+                            <option value="€">Euros</option>
+                            <option value="$">Dollars américains</option>
+                            <option value="£">Livres Sterling</option>
+                            <option value="₹">Roupies indiennes</option>
+                            <option value="₽">Roubles russes</option>
+                            <option value="¥">Yens</option>
+                            <option value="CFA">Francs CFA</option>
+                            <option value="₩">Wons sud-coréens</option>
+                            <option value="₱">Pesos philippins</option>
+                            <option value="₫">Dongs</option>
+                        </select>
+                        </td> 
+                    </tr>
+                    </tbody>
+                </table>
+                
+                <label for="valeur">Valeur à convertir:</label>
+                <input type="number" id="valeur" name="valeur">
+                
+                <button onclick="convertir()">Convertir</button>
+                
+                <p id="resultat"> <em>Résultat de votre conversion...</em><br><h1><i>*Dernière mise à jour le 17/05/2023 <br> Mise à jour des devises tous les 1000 ans</i></h1></p>
+                <script>
+                    function convertir() {
+                    var deUnite = document.getElementById("de-unite").value;
+                    var aUnite = document.getElementById("a-unite").value;
+                    var valeur = document.getElementById("valeur").value;
+                
+                    var facteur = 1; 
+                    if (deUnite === "$" && aUnite === "€") {
+                        facteur = 0.92;
+                    } else if (deUnite === "$" && aUnite === "₫") {
+                        facteur = 23455;
+                    } else if (deUnite === "$" && aUnite === "CFA") {
+                        facteur = 605.51;
+                    } else if (deUnite === "$" && aUnite === "£") {
+                        facteur = 0.8;
+                    } else if (deUnite === "$" && aUnite === "₱") {
+                        facteur = 56.14;
+                    } else if (deUnite === "$" && aUnite === "₹") {
+                        facteur = 82.34;
+                    } else if (deUnite === "$" && aUnite === "₽") {
+                        facteur = 80.79;
+                    } else if (deUnite === "$" && aUnite === "₩") {
+                        facteur = 1336.78;
+                    } else if (deUnite === "$" && aUnite === "¥") {
+                        facteur = 136.96;
+                    } else if (deUnite === "€" && aUnite === "$") {
+                        facteur = 1.08;
+                    } else if (deUnite === "€" && aUnite === "£") {
+                        facteur = 0.87;
+                    } else if (deUnite === "€" && aUnite === "₹") {
+                        facteur = 89.24;
+                    } else if (deUnite === "€" && aUnite === "₽") {
+                        facteur = 87.56;
+                    } else if (deUnite === "€" && aUnite === "¥") {
+                        facteur = 148.48
+                    } else if (deUnite === "€" && aUnite === "CFA") {
+                        facteur = 655.96
+                    } else if (deUnite === "€" && aUnite === "₩") {
+                        facteur = 1448.08
+                    } else if (deUnite === "€" && aUnite === "₱") {
+                        facteur = 60.81
+                    } else if (deUnite === "€" && aUnite === "₫") {
+                        facteur = 25408.8
+                    } else if (deUnite === "£" && aUnite === "$") {
+                        facteur = 1.25
+                    } else if (deUnite === "£" && aUnite === "€") {
+                        facteur = 1.15
+                    } else if (deUnite === "£" && aUnite === "₹") {
+                        facteur = 102.63
+                    } else if (deUnite === "£" && aUnite === "₽") {
+                        facteur = 100.69
+                    } else if (deUnite === "£" && aUnite === "¥") {
+                        facteur = 170.75
+                    } else if (deUnite === "£" && aUnite === "₩") {
+                        facteur = 1666.29
+                    } else if (deUnite === "£" && aUnite === "CFA") {
+                        facteur = 754.68
+                    } else if (deUnite === "£" && aUnite === "₱") {
+                        facteur = 69.95
+                    } else if (deUnite === "£" && aUnite === "₫") {
+                        facteur = 29233.49
+                    } else if (deUnite === "₹" && aUnite === "$") {
+                        facteur = 0.012
+                    } else if (deUnite === "₹" && aUnite === "£") {
+                        facteur = 0.0097
+                    } else if (deUnite === "₹" && aUnite === "€") {
+                        facteur = 0.011
+                    } else if (deUnite === "₹" && aUnite === "₽") {
+                        facteur = 0.98
+                    } else if (deUnite === "₹" && aUnite === "¥") {
+                        facteur = 1.66
+                    } else if (deUnite === "₹" && aUnite === "CFA") {
+                        facteur = 7.35
+                    } else if (deUnite === "₹" && aUnite === "₩") {
+                        facteur = 16.24
+                    } else if (deUnite === "₹" && aUnite === "₱") {
+                        facteur = 0.68
+                    } else if (deUnite === "₹" && aUnite === "₫") {
+                        facteur = 284.78
+                    } else if (deUnite === "₽" && aUnite === "$") {
+                        facteur = 0.012
+                    } else if (deUnite === "₽" && aUnite === "£") {
+                        facteur = 0.0099
+                    } else if (deUnite === "₽" && aUnite === "€") {
+                        facteur = 0.011
+                    } else if (deUnite === "₽" && aUnite === "¥") {
+                        facteur = 1.69
+                    } else if (deUnite === "₽" && aUnite === "CFA") {
+                        facteur = 7.48
+                    } else if (deUnite === "₽" && aUnite === "₩") {
+                        facteur = 16.51
+                    } else if (deUnite === "₽" && aUnite === "₱") {
+                        facteur = 0.69
+                    } else if (deUnite === "₽" && aUnite === "₫") {
+                        facteur = 289.57
+                    } else if (deUnite === "₽" && aUnite === "₹") {
+                        facteur = 1.02
+                    } else if (deUnite === "¥" && aUnite === "$") {
+                        facteur = 0.0073
+                    } else if (deUnite === "¥" && aUnite === "£") {
+                        facteur = 0.0059
+                    } else if (deUnite === "¥" && aUnite === "€") {
+                        facteur = 0.0067
+                    } else if (deUnite === "¥" && aUnite === "₽") {
+                        facteur = 0.59
+                    } else if (deUnite === "¥" && aUnite === "CFA") {
+                        facteur = 4.42
+                    } else if (deUnite === "¥" && aUnite === "₩") {
+                        facteur = 9.77
+                    } else if (deUnite === "¥" && aUnite === "₱") {
+                        facteur = 0.41
+                    } else if (deUnite === "¥" && aUnite === "₫") {
+                        facteur = 171.25
+                    } else if (deUnite === "¥" && aUnite === "₹") {
+                        facteur = 0.6
+                    } else if (deUnite === "CFA" && aUnite === "$") {
+                        facteur = 0.0017
+                    } else if (deUnite === "CFA" && aUnite === "£") {
+                        facteur = 0.0013
+                    } else if (deUnite === "CFA" && aUnite === "€") {
+                        facteur = 0.0015
+                    } else if (deUnite === "CFA" && aUnite === "₽") {
+                        facteur = 0.13
+                    } else if (deUnite === "CFA" && aUnite === "¥") {
+                        facteur = 0.23
+                    } else if (deUnite === "CFA" && aUnite === "₩") {
+                        facteur = 2.21
+                    } else if (deUnite === "CFA" && aUnite === "₱") {
+                        facteur = 0.093
+                    } else if (deUnite === "CFA" && aUnite === "₫") {
+                        facteur = 38.74
+                    } else if (deUnite === "CFA" && aUnite === "₹") {
+                        facteur = 0.14
+                    } else if (deUnite === "₩" && aUnite === "$") {
+                        facteur = 0.00075
+                    } else if (deUnite === "₩" && aUnite === "£") {
+                        facteur = 0.000006
+                    } else if (deUnite === "₩" && aUnite === "€") {
+                        facteur = 0.00069
+                    } else if (deUnite === "₩" && aUnite === "₽") {
+                        facteur = 0.06
+                    } else if (deUnite === "₩" && aUnite === "¥") {
+                        facteur = 0.1
+                    } else if (deUnite === "₩" && aUnite === "CFA") {
+                        facteur = 0.45
+                    } else if (deUnite === "₩" && aUnite === "₱") {
+                        facteur = 0.042
+                    } else if (deUnite === "₩" && aUnite === "₫") {
+                        facteur = 17.53
+                    } else if (deUnite === "₩" && aUnite === "₹") {
+                        facteur = 0.062
+                    } else if (deUnite === "₱" && aUnite === "$") {
+                        facteur = 0.018
+                    } else if (deUnite === "₱" && aUnite === "£") {
+                        facteur = 0.014
+                    } else if (deUnite === "₱" && aUnite === "€") {
+                        facteur = 0.0016
+                    } else if (deUnite === "₱" && aUnite === "₽") {
+                        facteur = 1.44
+                    } else if (deUnite === "₱" && aUnite === "¥") {
+                        facteur = 2.44
+                    } else if (deUnite === "₱" && aUnite === "CFA") {
+                        facteur = 10.79
+                    } else if (deUnite === "₱" && aUnite === "₩") {
+                        facteur = 23.83
+                    } else if (deUnite === "₱" && aUnite === "₫") {
+                        facteur = 417.8
+                    } else if (deUnite === "₱" && aUnite === "₹") {
+                        facteur = 1.47
+                    } else if (deUnite === "₫" && aUnite === "$") {
+                        facteur = 0.000043
+                    } else if (deUnite === "₫" && aUnite === "£") {
+                        facteur = 0.000034
+                    } else if (deUnite === "₫" && aUnite === "€") {
+                        facteur = 0.000039
+                    } else if (deUnite === "₫" && aUnite === "₽") {
+                        facteur = 0.0034
+                    } else if (deUnite === "₫" && aUnite === "¥") {
+                        facteur = 0.0058
+                    } else if (deUnite === "₫" && aUnite === "CFA") {
+                        facteur = 0.026
+                    } else if (deUnite === "₫" && aUnite === "₩") {
+                        facteur = 0.057
+                    } else if (deUnite === "₫" && aUnite === "₱") {
+                        facteur = 0.0024
+                    } else if (deUnite === "₫" && aUnite === "₹") {
+                        facteur = 0.0035
+                    }
+                    var resultat = valeur * facteur;
+                
+                    document.getElementById("resultat").innerHTML = valeur + " " + deUnite + " = " + resultat + " " + aUnite;
+                    }
+                </script>
+            </div>
         </div> 
     </header>
     <body>
