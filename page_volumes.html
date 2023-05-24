@@ -35,8 +35,9 @@
                             <option value="mL">Millilitres</option>
                             <option value="cL">Centilitres</option>
                             <option value="L">Litres</option>
-                            <option value="oz">Onces</option>
+                            <option value="oz">Onces liquides américaines</option>
                             <option value="m³">Mètres cube</option>
+                            <option value="dm³">Décimètres cube</option>
                         </select>
                         </td>
                         <td>
@@ -44,8 +45,9 @@
                             <option value="mL">Millilitres</option>
                             <option value="cL">Centilitres</option>
                             <option value="L">Litres</option>
-                            <option value="oz">Onces</option>
+                            <option value="oz">Onces liquides américaines</option>
                             <option value="m³">Mètres cube</option>
+                            <option value="dm³">Décimètres cube</option>
                         </select>
                         </td> 
                     </tr>
@@ -75,6 +77,8 @@
                         facteur = 0.033814; 
                     } else if (deUnite === "mL" && aUnite === "m³") {
                         facteur = 0.000001;
+                    } else if (deUnite === "mL" && aUnite === "dm³") {
+                        facteur = 0.001;
                     } else if (deUnite === "cL" && aUnite === "L") {
                         facteur = 0.01;
                     } else if (deUnite === "cL" && aUnite === "cL") {
@@ -85,6 +89,8 @@
                         facteur = 0.33814;
                     } else if (deUnite === "cL" && aUnite === "mL") {
                         facteur = 10;
+                    } else if (deUnite === "cL" && aUnite === "dm³") {
+                        facteur = 0.01;
                     } else if (deUnite === "L" && aUnite === "L") {
                         facteur = 1;
                     } else if (deUnite === "L" && aUnite === "mL") {
@@ -95,6 +101,8 @@
                         facteur = 100;
                     } else if (deUnite === "L" && aUnite === "m³") {
                         facteur = 0.001;
+                    } else if (deUnite === "L" && aUnite === "dm³") {
+                        facteur = 1;
                     } else if (deUnite === "oz" && aUnite === "cL") {
                         facteur = 2.95735;
                     } else if (deUnite === "oz" && aUnite === "mL") {
@@ -104,7 +112,9 @@
                     } else if (deUnite === "oz" && aUnite === "L") {
                         facteur = 0.0295735;
                     } else if (deUnite === "oz" && aUnite === "m³") {
-                        facteur = 0.000029574;
+                        facteur = 0.0000295735;
+                    } else if (deUnite === "oz" && aUnite === "dm³") {
+                        facteur = 0.0295735;
                     } else if (deUnite === "m³" && aUnite === "oz") {
                         facteur = 33814;
                     } else if (deUnite === "m³" && aUnite === "L") {
@@ -113,8 +123,20 @@
                         facteur = 1;
                     } else if (deUnite === "m³" && aUnite === "mL") {
                         facteur = 1000000;
-                    } else if (deUnite === "m³" && aUnite === "cL") {
-                        facteur = 100000;
+                    } else if (deUnite === "m³" && aUnite === "mL") {
+                        facteur = 1000000;
+                    } else if (deUnite === "m³" && aUnite === "dm³") {
+                        facteur = 1000;
+                    } else if (deUnite === "dm³" && aUnite === "oz") {
+                        facteur = 33.814;
+                    } else if (deUnite === "dm³" && aUnite === "L") {
+                        facteur = 1;
+                    } else if (deUnite === "dm³" && aUnite === "m³") {
+                        facteur = 0.001;
+                    } else if (deUnite === "dm³" && aUnite === "mL") {
+                        facteur = 1000;
+                    } else if (deUnite === "dm³" && aUnite === "cL") {
+                        facteur = 100;
                     }
                     var resultat = valeur * facteur;
                 
